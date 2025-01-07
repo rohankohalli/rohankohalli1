@@ -1,11 +1,37 @@
 body {
-    background: linear-gradient(135deg, #f5f7fa, #c3cfe2);
+    background: linear-gradient(135deg, #c4dcff, #a3aab4);
     display: flex;
     flex-direction: column;
     justify-content: center;
     margin: 0;
     align-items: center;
-    font-family: 'Arial', sans-serif;
+    font-family: 'Poppins', sans-serif; 
+    overflow: hidden;
+}
+
+body::before {
+    content: '';
+    position: absolute;
+    top: -50%;
+    left: -50%;
+    width: 200%;
+    height: 200%;
+    background:
+        /* Front faces */
+        linear-gradient(45deg, rgba(196, 220, 255, 0.2) 25%, transparent 25%) -50px 0,
+        linear-gradient(-45deg, rgba(196, 220, 255, 0.2) 25%, transparent 25%) -50px 0,
+        linear-gradient(45deg, rgba(196, 220, 255, 0.2) 25%, transparent 25%) 0px 0,
+        linear-gradient(-45deg, rgba(196, 220, 255, 0.2) 25%, transparent 25%) 0px 0,
+        /* Shading for depth */
+        linear-gradient(135deg, rgba(0, 0, 0, 0.05) 25%, transparent 25%) -50px 0,
+        linear-gradient(-135deg, rgba(0, 0, 0, 0.05) 25%, transparent 25%) -50px 0,
+        linear-gradient(135deg, rgba(0, 0, 0, 0.05) 25%, transparent 25%) 0px 0,
+        linear-gradient(-135deg, rgba(0, 0, 0, 0.05) 25%, transparent 25%) 0px 0;
+    background-size: 100px 100px;
+    background-repeat: repeat;
+    opacity: 0.4; /* Adjusts the visibility of the pattern */
+    transform: rotate(45deg) scale(1.5);
+    z-index: -1; /* Places the pattern behind other content */
 }
 
 nav {
@@ -15,7 +41,7 @@ nav {
     width: 100%;
     height: 90px;
     line-height: 90px;
-    background: linear-gradient(135deg, #ece9e6, #ffffff);
+    background: linear-gradient(135deg, #f5f7fa, #c3cfe2);
     padding-inline: 9vw;
     transition: .3s;
     z-index: 100;
@@ -69,7 +95,6 @@ nav {
 }
 
 .nav-menu-btn i {
-    font-size: 28px;
     cursor: pointer;
 }
 
@@ -181,7 +206,8 @@ nav {
 
 .social_icons {
     display: flex;
-    margin-top: 5em;
+    /* margin-top: 5em; */
+    justify-content: center;
     gap: 30px;
 }
 
@@ -207,23 +233,21 @@ nav {
 
 .featured-image {
     display: flex;
-    justify-content: right;
+    justify-content: flex-end;
     align-content: center;
     min-height: 80vh;
     width: 55%;
 }
 
 .image {
-    margin: auto 0;
-    width: 40%;
-    height: 40%;
+    margin: 20px;
+    width: 60%;
+    height: 60%;
+    align-content:center;
+    overflow: hidden;
+    /* border-radius: 20%;
+    border: 4px solid; */
     animation: imgFloat 7s ease-in-out infinite;
-}
-
-.image img {
-    width: 380px;
-    height: 380px;
-    object-fit: contain;
 }
 
 @keyframes imgFloat {
@@ -231,6 +255,14 @@ nav {
         transform: translateY(10px);
     }
 }
+
+.image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    margin-top: 25px;
+}
+
 
 .section {
     padding-block: 5em;
@@ -250,15 +282,22 @@ nav {
 
 .top-header {
     text-align: center;
-    margin-bottom: 5em;
+    margin-bottom: 16em;
 }
 
 .top-header h1 {
     font-weight: 600;
     color: rgb(68, 68, 68);
     margin-bottom: 10px;
+    /* font-size: 36px; 
+    text-transform: uppercase; 
+    letter-spacing: 2px; 
+    text-align: center;
+    background: linear-gradient(135deg, #f5f7fa, #c3cfe2); 
+    padding: 10px 20px;
+    border-radius: 10px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);  */
 }
-
 .top-header span {
     color: #999;
 }
@@ -364,34 +403,98 @@ h3 {
     text-decoration: none;
 }
 
+.col1{
+    background: rgba(255, 255, 255, 0.2);
+    border-radius: 10px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+    padding: 20px;
+    /* z-index: 1; */
+    opacity: 1;
+}
+.form-control{
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    width: 100%;
+}
+.form-inputs{
+    display: flex;
+    gap: 10px;
+    width: 100%;
+}
+.input-field{
+    width: 50%;
+    height: 55px;
+    /* background: transparent; */
+    border: 2px solid #AAA;
+    border-radius: 10px;
+    padding-inline: 20px;
+    outline: none;
+}
+textarea{
+    width: 90%;
+    height: 250px;
+    /* background: transparent; */
+    border: 2px solid #AAA;
+    border-radius: 10px;
+    padding: 15px 20px;
+    outline: none;
+    resize: none;
+}
+.form-button>.btn{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.form-button i{
+    font-size: 20px;
+    color: blue;
+}
+
 footer {
+    width: 100%;
     display: flex;
     justify-content: center;
     align-items: center;
     flex-direction: column;
     row-gap: 30px;
-    background: #F8F8F8;
-    padding-block: 40px 60px;
+    background: #333; 
+    color: white;
+    padding: 40px 60px;
+    box-shadow: 0 -4px 6px rgba(0, 0, 0, 0.1);
+    position: relative;
+    bottom: 0;
 }
 
 .top-footer p {
     font-size: 25px;
     font-weight: 600;
+    margin: 0;
 }
 
 .middle-footer .footer-menu {
     display: flex;
+    gap: 20px;
 }
 
 .footer_menu_list {
     list-style: none;
+    margin: 0;
+    padding: 0;
 }
 
 .footer_menu_list a {
     text-decoration: none;
-    color: rgb(68, 68, 68);
+    color: white;
     font-weight: 500;
-    margin-inline: 20px;
+    transition: color 0.3s ease;
+}
+
+.footer_menu_list a:hover {
+    color: rgb(0, 255, 234);
 }
 
 .footer-social-icons {
@@ -399,57 +502,11 @@ footer {
     gap: 30px;
 }
 
-@media only screen and (max-width: 1024px) {
-    .featured-text {
-        padding: 0;
-    }
-    .image, .image img {
-        width: 280px;
-        height: 280px;
-    }
-}
-@media only screen and (max-width: 900px) {
-    .nav-menu {
-        flex-direction: column;
-        align-items: center;
-    }
-    .featured-box {
-        flex-direction: column;
-        align-items: center;
-    }
-    .featured-text {
-        width: 90%;
-        text-align: center;
-    }
-    .featured-image {
-        width: 90%;
-    }
-    .image, .image img {
-        width: 100%;
-        height: auto;
-    }
-    .row {
-        flex-direction: column;
-        align-items: center;
-    }
-    .col {
-        width: 100%;
-    }
+.footer-social-icons .icon {
+    color: white;
+    transition: color 0.3s ease;
 }
 
-@media only screen and (max-width: 540px) {
-    .featured-name {
-        font-size: 24px;
-    }
-    .project-box {
-        width: 100%;
-        margin-bottom: 20px;
-    }
-    .form-inputs {
-        flex-direction: column;
-    }
-    .input-field {
-        width: 100%;
-        margin-bottom: 10px;
-    }
+.footer-social-icons .icon:hover {
+    color: rgb(0, 255, 234);
 }
