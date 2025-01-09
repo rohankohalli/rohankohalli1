@@ -1,57 +1,76 @@
-document.getElementById('menuToggle').addEventListener('click', function() {
-    const navMenu = document.getElementById('myNavMenu');
-    navMenu.classList.toggle('active');
-});
+// Get all navigation links and sections
+const navLinks = document.querySelectorAll('nav ul li a');
+const sections = document.querySelectorAll('section');
 
-window.onscroll = function() {headerShadow()};
+// Function to highlight the active link
+function highlightActiveLink() {
+    let currentSection = '';
 
-function headerShadow() {
-  const navHeader =document.getElementById("header");
+    // Loop through sections to find the one in view
+    sections.forEach(section => {
+        const sectionTop = section.offsetTop;
+        const sectionHeight = section.clientHeight;
 
-  if (document.body.scrollTop > 50 || document.documentElement.scrollTop >  50) {
+        // Check if the section is in view
+        if (window.scrollY >= sectionTop - sectionHeight / 3) {
+            currentSection = section.getAttribute('id');
+        }
+    });
 
-    navHeader.style.boxShadow = "0 1px 6px rgba(0, 0, 0, 0.1)";
-    navHeader.style.height = "70px";
-    navHeader.style.lineHeight = "70px";
+    // Remove the 'active' class from all links
+    navLinks.forEach(link => {
+        link.classList.remove('active');
+    });
 
-  } else {
-
-    navHeader.style.boxShadow = "none";
-    navHeader.style.height = "90px";
-    navHeader.style.lineHeight = "90px";
-
-  }
+    // Add the 'active' class to the link corresponding to the current section
+    navLinks.forEach(link => {
+        if (link.getAttribute('href').includes(currentSection)) {
+            link.classList.add('active');
+        }
+    });
 }
 
-let typingEffect = new Typed(".typedText",{
-  strings : ["Web Developer","Python Developer"],
-  loop : true,
-  typeSpeed : 100, 
-  backSpeed : 80,
-  backDelay : 2000
-})
+// Add event listener for scroll
+window.addEventListener('scroll', highlightActiveLink);
 
-document.addEventListener("DOMContentLoaded", function () {
-  const navLinks = document.querySelectorAll(".nav-link");
-  const navMenu = document.querySelector(".nav_menu_list");
+// Add event listener for click
+navLinks.forEach(link => {
+    link.addEventListener('click', function (e) {
+        e.preventDefault(); // Prevent default anchor behavior
 
-  function updateDotPosition() {
-    const activeLink = document.querySelector(".nav-link.active-link");
-    if (activeLink) {
-      const activeLinkOffset = activeLink.offsetLeft;
-      const activeLinkWidth = activeLink.offsetWidth;
-      navMenu.style.setProperty("--dot-left", `${activeLinkOffset + activeLinkWidth / 2}px`);
-    }
-  }
+        // Remove the 'active' class from all links
+        navLinks.forEach(link => link.classList.remove('active'));
 
-  navLinks.forEach(link => {
-    link.addEventListener("click", function () {
-      navLinks.forEach(l => l.classList.remove("active-link"));
-      this.classList.add("active-link");
-      updateDotPosition();
+        // Add the 'active' class to the clicked link
+        this.classList.add('active');
+
+        // Smooth scroll to the target section
+        const targetId = this.getAttribute('href');
+        const targetSection = document.querySelector(targetId);
+        targetSection.scrollIntoView({
+            behavior: 'smooth'
+        });
     });
-  });
+});
 
-  // Initial position
-  updateDotPosition();
+// Highlight the active link on page load
+highlightActiveLink();
+
+// Initialize Typed.js
+let typingEffect = new Typed(".typedText", {
+    strings: ["Web Developer", "Python Developer"], 
+    loop: true,
+    typeSpeed: 100,
+    backSpeed: 80, 
+    backDelay: 2000, 
+});
+// Add event listener to each skill item
+document.querySelectorAll('.skills-list li').forEach((item) => {
+    item.addEventListener('mouseover', () => {
+        item.style.transform = 'scale(1.1)';
+    });
+
+    item.addEventListener('mouseout', () => {
+        item.style.transform = 'scale(1)';
+    });
 });

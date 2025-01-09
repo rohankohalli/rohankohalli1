@@ -1,142 +1,194 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Index</title>
-    <link rel="stylesheet" href="style.css" type="text/css">
-    <script src="script.js" defer type="text/javascript"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/typed.js/2.0.12/typed.min.js"></script>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css" />
-    <link rel="shortcut icon" href="images/house-solid.svg" type="image/x-icon">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Portfolio</title>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/typed.js/2.0.12/typed.min.js"></script>
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+        <!-- <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css" /> -->
+        <link rel="stylesheet" href="styles.css">
+        <script src="script.js"></script>
+        <link rel="shortcut icon" href="images/house-solid.svg" type="image/x-icon">
 </head>
 <body>
-    <nav id="header">
-        <div class="nav-menu-btn" id="menuToggle">
-          <i class="fa fa-bars"></i>
+    <nav>
+        <div class="nav-name">
+            <a href="#home">RK.</a>
         </div>
-        <div class="nav-menu" id="myNavMenu">
-          <ul class="nav_menu_list">
-            <li class="nav_list">
-              <a href="#home" class="nav-link active-link">Home</a>
-            </li>
-            <li class="nav_list">
-              <a href="#about" class="nav-link">About</a>
-            </li>
-            <li class="nav_list">
-              <a href="#contact" class="nav-link">Contact</a>
-            </li>
-          </ul>
+        <ul>
+            <li><a href="#about">About</a></li>
+            <li><a href="#certificates">Certifications</a></li>
+            <li><a href="#contact">Contact</a></li>
+        </ul>
+
+        <div hidden>
+            <a href="images/Rohan Kohalli Resume (pdf.io).pdf">Resume</a>
         </div>
-      </nav>
-      
-    <main class="wrapper">
-        <section class="featured-box" id="home">
-            <div class="featured-text">
-                <div class="featured-text-card">
-                    <span>Rohan Kohalli</span>
-                </div>
-                <div class="featured-name">
-                    <p>I'm <span class="typedText"></span></p>
-                </div>
-                <div class="featured-text-info">
-                    <p>Web developer with a passion for creating visually stunning and user-friendly websites.</p>
-                </div>
-                <div class="social_icons">
-                    <div class="icon"><a href="https://www.instagram.com/rohan_kohalli" target="_blank"><i class="fab fa-instagram"></i></a></div>
-                    <div class="icon"><a href="https://www.linkedin.com/in/rohan-kohalli"><i class="fab fa-linkedin"></i></a></div>
-                    <div class="icon"><a href="https://github.com/RohanKohalli"><i class="fab fa-github"></i></a></div>
-                </div>
-            </div>
-            <div class="featured-image">
-                <div class="image">
-                    <img src="images/profile.png" alt="avatar">
-                </div>
-            </div>
-        </section>
+    </nav>
+
+<section id="home">
+    <div class="info-text">
+        <div class="name">
+        <span class="name">Rohan Kohalli</span>
+        </div>
+        <div class="featured-name">
+            <p hidden>I'm <span class="typedText"></span></p>
+        </div>
+        <div class="text-info">
+            <p>Web developer with a passion for creating visually stunning and   user-friendly websites.</p>
+        </div>
+        <div class="social_icons">
+
+            <div class="icon"><a href="https://www.instagram.com/rohan_kohalli" target="_blank"><i class="fab fa-instagram"></i></a></div>
+            <div class="icon"><a href="https://www.linkedin.com/in/rohan-kohalli"><i class="fab fa-linkedin"></i></a></div>
+            <div class="icon"><a href="https://github.com/RohanKohalli"><i class="fab fa-github"></i></a></div>
         
-        <section class="section" id="about">
-            <div class="top-header">
-                <h1>About Me</h1>
+        </div>
+        </div>
+        <div class="info-image">
+            <img src="images/profile.jpg" alt="avatar" class="profile-image">
+        </div>
+</section>
+
+<section id="about">
+    <div class="about-content">
+            <span>Hi, I'm Rohan Kohalli, a web developer with a love for creating clean,
+                user-friendly websites. I specialize in front-end development using HTML,CSS, and JavaScript, and I'm always exploring new frameworks like Angular.</span>
+    </div>
+    <section class="about-me">
+        <div class="about-container">
+            <div class="about-header">
+                <h2>About Me</h2>
+                <p class="tagline">Passionate Developer | Problem Solver | Tech Enthusiast</p>
             </div>
-            <div class="row">
-                <div class="col">
-                    <div class="about-info">
-                        <h3>My introduction</h3>
-                        <p>I'm passionate about turning ideas into functional and visually appealing applications. 
-                            With a focus on creating seamless user experiences and efficient backend solutions 
-                            and learning new technologies to stay ahead in the ever-evolving tech landscape.
-                        </p>
+            <div class="about-content">
+                <div class="about-left">
+                    <div class="about-card">
+                        <h3>Profile</h3>
+                        <p>Computer Science & Developer</p>
+                    </div>
+                    <div class="about-card">
+                        <h3>Domain</h3>
+                        <p>Web Developer</p>
+                    </div>
+                    <div class="about-card">
+                        <h3>Education</h3>
+                        <p>Bachelor of Computer Science</p>
                     </div>
                 </div>
-                <div class="col">
-                    <div class="skills-box">
-                        <div class="skills-header">
-                            <h3>Frontend</h3>
-                        </div>
-                        <div class="skills-list">
-                            <span>HTML</span>
-                            <span>CSS</span>
-                            <span>JavaScript</span>
-                            <span>Bootstrap</span>
-                        </div>
+                <div class="about-right">
+                    <div class="about-card">
+                        <h3>Languages</h3>
+                        <p>Marathi, Kannada,Hindi, English</p>
                     </div>
-                    <div class="skills-box">
-                        <div class="skills-header">
-                            <h3>Backend</h3>
-                        </div>
-                        <div class="skills-list">
-                            <span>Python</span>
-                            <span>JAVA</span>
-                            <span>PHP</span>
-                        </div>
-                    </div>
-                    <div class="skills-box">
-                        <div class="skills-header">
-                            <h3>Database</h3>
-                        </div>
-                        <div class="skills-list">
-                            <span>MySQL</span>
-                        </div>
+                    <div class="about-card">
+                        <h3>Interests</h3>
+                        <p>Playing Cricket, Coding, Exploring New Technologies</p>
                     </div>
                 </div>
             </div>
-        </section>
-        <section class="section" id="contact">
-            <div class="top-header">
-                <h1>Get in touch</h1>
+        </div>
+    </section>
+    <section class="skills-section">
+        <div class="skills-container">
+            <h2>Skills</h2>
+            <div class="skills-content">
+                <div class="skill-card">
+                    <h3>Programming Languages</h3>
+                    <p>Python, Java, HTML, CSS, JavaScript</p>
+                </div>
+                <div class="skill-card">
+                    <h3>Development Tools</h3>
+                    <p>Git, GitHub, Visual Studio Code</p>
+                </div>
+                <div class="skill-card">
+                    <h3>Soft Skills</h3>
+                    <p>Communication, Teamwork, Problem-Solving</p>
+                </div>
             </div>
-            <div class="row">
-                <div class="col">
-                    <div class="contact-info">
-                        <h2>Find Me <i class="fa fa-arrow-down"></i></h2>
-                        <p><i class="fa fa-envelope"></i>rohan.kohalli@gmail.com</p>
-                        <p><i class="fa fa-phone"></i> +91 9307638012</p>
-                    </div>
+        </div>
+    </section>
+</section>
+
+<section id="certificates">
+    <div class="card">
+        <div class="card-header">
+            <h2>Certificate</h2>
+        </div>
+        <div class="card-body">
+            <div class="certificate">
+                <h3>Cloud Engineering Track</h3>
+                <img src="images/certificate.jpg" alt="Google" class="gc">
+                <p>Issued by Google Cloud | October 2021</p>
+            </div>
+        </div>
+    </div>
+    <div class="card">
+        <div class="card-header">
+            <h2>Certificate</h2>
+        </div>
+        <div class="card-body">
+            <div class="certificate">
+                <h3>Data Science Track</h3>
+                <img src="images/certificate2.jpg" alt="Google" class="gc">
+                <p>Issued by Google Cloud | November 2022</p>
+            </div>
+        </div>
+    </div>
+    <div class="card">
+        <div class="card-header">
+            <h2>Machine Learning Track</h2>
+        </div>
+        <div class="card-body">
+            <div class="certificate">
+                <h3>Machine Learning Engineering</h3>
+                <img src="images/certificate3.jpg" alt="Google" class="gc">
+                <p>Issued by Google Cloud | December 2023</p>
+            </div>
+        </div>
+    </div>
+</section>
+
+<section id="contact">
+        <div class="top-header">
+            <h1>Contact</h1>
+        </div>
+        <div class="container">
+            <div class="col">
+                <div class="contact-info">
+                    <h2>Find Me <i class="fa fa-arrow-down"></i></h2>
+                    <p><i class="fa fa-envelope"></i><a href="mailto:rohan.kohalli@gmail.com">rohan.kohalli@gmail.com</a></p>
+                    <p><i class="fa fa-phone"></i> +91 9307638012</p>
                 </div>
                 <div class="col1">
                     <div class="form-control">
-                      <form name="submit-to-google-sheet">
-                        <div class="form-inputs">
-                            <input type="text" name="name" class="input-field" placeholder="Name" required>
-                            <input type="email" name="email" class="input-field" placeholder="Email" required>
-                        </div>
-                        <div class="text-area" style="padding-top:10px">
-                            <textarea placeholder="Message" name="message" required></textarea>
-                        </div>
-                        <div class="form-button">
-                            <button class="btn" type="submit" id="btnSubmit">Send <i class="fa fa-paper-plane"></i></button>
+                        <form name="submit-to-google-sheet">
+                            <div class="form-inputs">
+                                <input type="text" name="name" class="input-field" placeholder="Name" required>
+                                <input type="email" name="email" class="input-field" placeholder="Email" required>
+                            </div>
+                            <div class="text-area" style="padding-top:10px">
+                                <textarea placeholder="Message" name="message" required></textarea>
+                            </div>
+                            <div class="form-button">
+                                <button class="btn" type="submit" id="btnSubmit">Send <i class="fa fa-paper-plane"></i></button>
                             <p id="response"></p>
-                        </div>
+                            </div>
                         </form>
                     </div>
                 </div>
             </div>
-        </section>
-    </main>
+        </div>
+</section>
+
+    <!-- <footer>
+        <p>&copy; 2025 Rohan Kohalli.</p>
+    </footer> -->
+
     <footer>
         <div class="top-footer">
-            <p>Rohan Kohalli</p>
+            <p>Rohan Kohalli.</p>
         </div>
         <div class="middle-footer">
             <ul class="footer-menu">
