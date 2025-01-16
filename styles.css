@@ -497,6 +497,7 @@ textarea{
 
 .contact-info a {
     text-decoration: none; /* Remove underline */
+    color:white;
 }
 
 .about-container, .skills-container {
