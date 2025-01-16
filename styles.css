@@ -283,10 +283,15 @@ footer {
     position: relative;
     bottom: 0;
 }
+.top-footer{
+    width:15px;
+}
 
 .top-footer p {
     font-size: 25px;
     font-weight: 600;
+    margin: 0;
+}
     margin: 0;
 }
 
